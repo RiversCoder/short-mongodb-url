@@ -1,0 +1,28 @@
+{
+  "name": "short-mongodb-url",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RiversCoder/short-mongodb-url.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RiversCoder/short-mongodb-url/issues"
+  },
+  "homepage": "https://github.com/RiversCoder/short-mongodb-url#readme",
+  "dependencies": {
+    "config": "^3.2.4",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.12",
+    "shortid": "^2.2.15",
+    "valid-url": "^1.0.9"
+  }
+}
