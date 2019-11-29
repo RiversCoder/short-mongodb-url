@@ -20,7 +20,7 @@
         qrcode.innerHTML = '';
 
         // 请求 获取短链接
-        fetch('http://127.0.0.1:3002/api/url/shorten',{
+        fetch('http://127.0.0.1/api/url/shorten',{
             method: 'post',
             headers: {
                 'Accept': 'application/json',
@@ -30,7 +30,7 @@
                 longUrl: ipt.value
             })
         }).then(res => res.json()).then(res => {
-            let link = 'http://127.0.0.1:3002/'+res.urlCode;
+            let link = 'http://127.0.0.1/'+res.urlCode;
             // 赋值 短链接
             linkText.innerText = link;
             linkText.href = link;

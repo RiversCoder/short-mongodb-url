@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const config = require('config');
 const db = config.get('mongoURI');
 
+// 创建 mongodb 连接方法
 const connectDB = async () => {
     try{
         await mongoose.connect(db, {
