@@ -7,6 +7,14 @@
 
 
     btn.addEventListener('click', () => {
+        
+        // 验证是表单内容否为空
+        if(!ipt.value.replace(/\s*/g,'')){
+            return
+        }
+
+        // 验证表单内容是否是一个链接
+        
         // 内容显示
         content.style.display = 'none';
         qrcode.innerHTML = '';
@@ -25,6 +33,7 @@
             let link = 'http://127.0.0.1:3002/'+res.urlCode;
             // 赋值 短链接
             linkText.innerText = link;
+            linkText.href = link;
             // qrcode
             new QRCode(qrcode, link);
             // 显示 盒子
