@@ -9,10 +9,23 @@ const UrlModel = require('../models/Url.js');
 // @route POST /api/url/shorten
 // @desc  Create short url
 
+async function sleep(time){
+    return new Promise((resolve) => {
+        let timer = setTimeout(v => {
+            resolve(v);
+            clearTimeout(timer);
+        }, time*1000);
+    });
+}
+
 router.post('/shorten', async (req, res) => {
     const { longUrl } = req.body;
     const baseUrl = config.get("baseUrl");
     console.log('longUrl: '+longUrl)
+
+    // 停留10秒
+    await sleep(1);
+    
     // check base url
     if(!validUrl.isUri(baseUrl)){
         return res.status(401).json('Invalid base url');
@@ -20,7 +33,7 @@ router.post('/shorten', async (req, res) => {
     
     // create url code
     const urlCode  = shortId.generate();
-    // console.log(longUrl)
+   
     // check long url 
     if(validUrl.isUri(longUrl)){
         try{

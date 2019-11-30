@@ -10,6 +10,8 @@ const bodyParser = require('body-parser');
 // 引入 mongodb 相关配置
 const connectDB = require('./config/db');
 
+const path = require('path');
+
 // connect to database
 connectDB();
 
@@ -29,6 +31,10 @@ app.all('*', function (req, res, next) {
 // 解释与 express.json() 、express.urlencoded() 
 app.use(bodyParser.json()); 
 // app.use(express.json());
+
+// 配置静态文件路径
+// app.use(express.static(__dirname+'/public'));
+// app.use(express.static(path.join(__dirname, 'public')))
 
 // 配置路由
 app.use('/', require('./routes/index'));

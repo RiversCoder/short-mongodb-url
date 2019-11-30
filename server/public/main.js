@@ -15,6 +15,7 @@
 
         // 验证表单内容是否是一个链接
         
+        
         // 内容显示
         content.style.display = 'none';
         qrcode.innerHTML = '';
